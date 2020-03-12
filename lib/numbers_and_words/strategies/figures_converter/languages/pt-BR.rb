@@ -58,7 +58,7 @@ module NumbersAndWords
           def gender
             return (options.gender.result || :male) if maybe_ordinal
 
-            if current_capacity&.positive? && figures[0] == 1
+            if current_capacity && current_capacity.positive? && figures[0] == 1
               :male
             else
               options.gender.result
