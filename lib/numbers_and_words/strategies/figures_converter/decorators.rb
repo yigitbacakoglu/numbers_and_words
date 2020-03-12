@@ -17,7 +17,7 @@ module NumbersAndWords
     module FiguresConverter
       module Decorators
         class << self
-          AVAILABLE = %i[integral fractional].freeze
+          AVAILABLE = %w[integral fractional].freeze
 
           def factory(strategy, options)
             enabled_decorator(options).new strategy, options
