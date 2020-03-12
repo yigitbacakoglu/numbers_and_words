@@ -6,7 +6,7 @@ module NumbersAndWords
       module Languages
         class Cs < Base
           # methods in translations/cs.rb which can work with :gender or :ordinal
-          %i[ones teens tens tens_with_ones hundreds].each do |method_name|
+          %w[ones teens tens tens_with_ones hundreds].each do |method_name|
             define_method(method_name) do
               super(internal_options)
             end
