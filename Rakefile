@@ -28,7 +28,7 @@ require 'rubocop/rake_task'
 RuboCop::RakeTask.new
 RSpec::Core::RakeTask.new(:spec) { |t| t.ruby_opts = '-w' }
 
-task default: %i[rubocop spec]
+task default: %w[rubocop spec]
 
 require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|
