@@ -11,7 +11,7 @@ module NumbersAndWords
               translate :zero, options
             end
 
-            %i[ones teens tens tens_with_ones hundreds].each do |method_name|
+            %w[ones teens tens tens_with_ones hundreds].each do |method_name|
               define_method(method_name) do |*args|
                 options = args.first || {}
                 translate method_name, @figures.send(method_name), options
