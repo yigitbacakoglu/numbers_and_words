@@ -23,7 +23,7 @@ module NumbersAndWords
           end
 
           def method_missing(method_name, *args, &block)
-            method = Object.const_get(proxy_class_name(method_name))
+            method = proxy_class_name(method_name).try(:constantize)
 
             if method
               method.new(self, args, block)
@@ -35,7 +35,7 @@ module NumbersAndWords
           end
 
           def respond_to_missing?(method_name, include_private = false)
-            Object.const_get(proxy_class_name(method_name)) || super
+            proxy_class_name(method_name).try(:constantize) || super
           end
 
           private

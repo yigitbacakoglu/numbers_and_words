@@ -34,7 +34,7 @@ module NumbersAndWords
       module Languages
         class << self
           def factory(strategy)
-            Object.const_get("#{name}::#{I18n.language_class_name}").new strategy
+            "#{name}::#{I18n.language_class_name}".constantize.new strategy
           end
         end
       end

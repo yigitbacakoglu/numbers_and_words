@@ -30,7 +30,7 @@ module NumbersAndWords
           end
 
           def decorator_class(method_name)
-            method_name ? Object.const_get(decorator_class_name(method_name)) : Decorators::Base
+            method_name ? decorator_class_name(method_name).constantize : Decorators::Base
           end
 
           def decorator_class_name(method_name)

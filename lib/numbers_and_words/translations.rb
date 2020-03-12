@@ -31,7 +31,7 @@ module NumbersAndWords
   module Translations
     class << self
       def factory
-        Object.const_get("#{name}::#{I18n.language_class_name}").new
+        "#{name}::#{I18n.language_class_name}".constantize.new
       end
     end
   end
