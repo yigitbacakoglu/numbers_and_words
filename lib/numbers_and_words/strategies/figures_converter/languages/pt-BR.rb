@@ -5,7 +5,7 @@ module NumbersAndWords
     module FiguresConverter
       module Languages
         class PtBr < Base
-          %i[teens tens tens_with_ones].each do |method_name|
+          %w[teens tens tens_with_ones].each do |method_name|
             define_method(method_name) do
               super(internal_options)
             end
