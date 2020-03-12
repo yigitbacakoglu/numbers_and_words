@@ -47,7 +47,7 @@ module NumbersAndWords
             end
           end
 
-          %i[zero ones teens tens tens_with_ones hundreds megs].each do |method_name|
+          %w[zero ones teens tens tens_with_ones hundreds megs].each do |method_name|
             define_method(method_name) do
               super({ prefix: maybe_ordinal(method_name) })
             end
