@@ -5,7 +5,7 @@ module NumbersAndWords
     module FiguresConverter
       module Languages
         class En < Base
-          %i[ones teens tens megs].each do |method_name|
+          %w[ones teens tens megs].each do |method_name|
             define_method(method_name) do
               super({ prefix: maybe_ordinal(method_name) })
             end
